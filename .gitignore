@@ -2,5 +2,5 @@
 bin/
 obj/
 Builds/
+Temp/
 project.lock.json
-

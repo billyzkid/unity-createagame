@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
@@ -24,5 +25,13 @@ public class GunController : MonoBehaviour
 
         equippedGun = (Gun)Instantiate(gunToEquip, weaponHold.position, weaponHold.rotation);
         equippedGun.transform.parent = weaponHold;
+    }
+
+    public void Shoot()
+    {
+        if (equippedGun != null)
+        {
+            equippedGun.Shoot();
+        }
     }
 }
