@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LivingEntity : MonoBehaviour, IDamageable
 {
@@ -23,7 +22,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
         }
     }
 
-    private void Die()
+    protected void Die()
     {
         dead = true;
         GameObject.Destroy(gameObject);
