@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class LivingEntity : MonoBehaviour, IDamageable
 {
@@ -6,6 +7,8 @@ public class LivingEntity : MonoBehaviour, IDamageable
 
     protected float health;
     protected bool dead;
+
+    public event Action OnDeath;
 
     protected virtual void Start()
     {
@@ -25,6 +28,12 @@ public class LivingEntity : MonoBehaviour, IDamageable
     protected void Die()
     {
         dead = true;
+
+        if (OnDeath != null)
+        {
+            OnDeath();
+        }
+
         GameObject.Destroy(gameObject);
     }
 }
