@@ -48,10 +48,9 @@ public class Spawner : MonoBehaviour
         if (currentWaveNumber - 1 < waves.Length)
         {
             currentWave = waves[currentWaveNumber - 1];
+            enemiesRemainingToSpawn = currentWave.enemyCount;
+            enemiesRemainingAlive = enemiesRemainingToSpawn;
         }
-
-        enemiesRemainingToSpawn = currentWave.enemyCount;
-        enemiesRemainingAlive = enemiesRemainingToSpawn;
     }
 
     [Serializable]
